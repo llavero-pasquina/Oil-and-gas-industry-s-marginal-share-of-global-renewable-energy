@@ -1,5 +1,6 @@
-#Anonymised code for peer-review. 
-#"Part of the Solution"? Quantifying the fossil fuel industry's renewable energy deployment
+#Oil and gas industry’s marginal share of global renewable energy. Nature Sustainability
+#Marcel Llavero-Pasquina, Antonio Bontempi
+#marcelllaveropasquina@gmail.com
 
 ####FUNCTIONS####
 
@@ -217,9 +218,9 @@ FF$Technology[which(FF$Project.Name %in% "Anhui Anqing Gaoxinqu wind farm")] <- 
 FF$Owner[which(FF$Owner %in% "")] <- FF$Operator[which(FF$Owner %in% "")]
 
 #Edit some character issues that are otherwise problematic
-FF$Country <- gsub("Türkiye","Turkey",FF$Country)
-FF$Country <- gsub("Réunion","Reunion",FF$Country)
-FF$Country <- gsub("Côte d'Ivoire","Ivory Coast",FF$Country)
+FF$Country <- gsub("TÃ¼rkiye","Turkey",FF$Country)
+FF$Country <- gsub("RÃ©union","Reunion",FF$Country)
+FF$Country <- gsub("CÃ´te d'Ivoire","Ivory Coast",FF$Country)
 FF$Owner <- gsub("\\%50","50\\%",FF$Owner)
 
 #Remove entries with status cancelled or shelved
@@ -303,7 +304,7 @@ FF$Owner[grep("Willogoleche|Silverleaf|Hills of Gold",FF$Project.Name)] <- "IGC 
 
 #Mitsui acquires 49% of Kasso Solar farm
 #https://renewablesnow.com/news/mitsui-to-buy-into-danish-solar-methanol-project-of-european-energy-827763/
-FF$Owner[which(FF$Project.Name %in% "Kassø solar farm")] <- "European Energy A/S [51%]; Mitsui & Co Ltd [49%]"
+FF$Owner[which(FF$Project.Name %in% "KassÃ¸ solar farm")] <- "European Energy A/S [51%]; Mitsui & Co Ltd [49%]"
 
 #Mitsui partly owns Taza wind farm in Morrocco
 #https://www.power-technology.com/data-insights/power-plant-profile-taza-wind-farm-morocco/
@@ -332,10 +333,10 @@ FF$Owner[which(FF$Project.Name %in% "RTC-I solar farm")] <- "ReNew Power [51%]; 
 #https://www.repsol.com/en/press-room/press-releases/2024/repsol-completes-the-construction-of-frye-solar-in-the-united-states-its-largest-solar-plant/index.cshtml
 FF$Status[grep("Frye",FF$Project.Name)] <- "operating"
 
-#Repsol owns San Bartolom� and Odón de Buen wind farm
+#Repsol owns San Bartolomé and OdÃ³n de Buen wind farm
 #https://www.repsol.com/en/press-room/press-releases/2023/repsol-buys-three-wind-and-two-solar-projects/index.cshtml
 #https://www.repsol.com/content/dam/repsol-corporate/en_gb/accionistas-e-inversores/informes-anuales/2023/integrated-management-report-2023.pdf
-FF$Owner[grep("San Bartolomé|Odón de Buen wind farm",FF$Project.Name)] <- "Repsol SA"
+FF$Owner[grep("San BartolomÃ©|OdÃ³n de Buen wind farm",FF$Project.Name)] <- "Repsol SA"
 
 #Repsol owns 51% of portfolio shared with Pontegadea
 #https://www.repsol.com/en/press-room/press-releases/2021/repsol-incorporates-pontegadea-as-partner-in-delta-wind-farm/index.cshtml
@@ -358,7 +359,7 @@ FF$Owner[grep("Actividades de Construccion y Servicios ; Galp",FF$Owner)] <- "Ac
 #In addition, the Galp-ACS consortium also owns Logro Solar, El Robledo, Ribagrande, Sierrezuela, etc
 #https://www.galp.com/corp/Portals/0/Recursos/Investidores/IMR2023/EN/AnnualIntegratedReport2023.pdf
 #https://www.pv-magazine.es/2022/08/17/las-mayores-centrales-solares-del-mundo-12-parque-solar-escatron-chiprana-samper-espana/
-FF$Owner[grep("Logro|Robledo|Ribagrande|Sierrezuela|Valdelagua|Emoci|Envitero|Escarnes|Ignis Solar|Mediomonte|Mocatero|Palabra|Hazaña|Talento",FF$Project.Name)] <- "Actividades de Construccion y Servicios [25%]; Galp ACS [75%]"
+FF$Owner[grep("Logro|Robledo|Ribagrande|Sierrezuela|Valdelagua|Emoci|Envitero|Escarnes|Ignis Solar|Mediomonte|Mocatero|Palabra|HazaÃ±a|Talento",FF$Project.Name)] <- "Actividades de Construccion y Servicios [25%]; Galp ACS [75%]"
 
 #Osaka Gas owns Noheji Mutsu Bay Wind Far and Yokohama Town Wind Power Plant
 #https://www.daigasgroup.com/en/files/data/ir/fb/2023/fb2023.pdf
@@ -377,7 +378,7 @@ FF$Owner[grep("Cumberhead",FF$Project.Name)] <- "Octopus Energy"
 #Octopus owns 12.5% of Walney wind farm
 #https://octopus.energy/press/walney-extension-wind-farm-investment/
 #https://www.power-technology.com/features/largest-offshore-windfarm-world/?cf-view
-FF$Owner[grep("Cumberhead",FF$Project.Name)] <- "Octopus Energy [12.5%]; �~rsted A/S [50%]; PFA Pension [25%]; PKA Group [12.5%]"
+FF$Owner[grep("Cumberhead",FF$Project.Name)] <- "Octopus Energy [12.5%]; Ã~rsted A/S [50%]; PFA Pension [25%]; PKA Group [12.5%]"
 
 #Octopus owns 31% of Lincs wind farm
 #https://octopus.energy/press/octopus-energy-makes-more-waves-in-offshore-wind-with-1bn-invested-and-plans-to-rapidly-scale/
